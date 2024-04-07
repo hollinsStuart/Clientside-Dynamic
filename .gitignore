@@ -1,0 +1,72 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Dependency directories
+.deps/
+
+# Build directory
+build/
+Release/
+Debug/
+
+# Binary directory
+bin/
+
+# Temporary files
+*~
+*.swp
+*.tmp
+*.temp
+
+# IDE/editor specific files
+*.user
+*.suo
+*.sublime*
+*.vscode/
+*.idea/
+*.project
+*.workspace
+*.cproject
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
