@@ -1,12 +1,28 @@
 cmake_minimum_required(VERSION 3.27)
-project(Server)
+project(Cpp_Server)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(main src/main.cpp)
+file(GLOB ROUTES "src/routes/*.cpp")
+
+add_executable(main src/main.cpp ${ROUTES}
+        include/URLMap.h)
+
+include_directories(${BOOST_PATH})
+set(BOOST_ROOT "/opt/homebrew/Cellar/boost/1.84.0_1")
+set(Boost_INCLUDE_DIR "/opt/homebrew/Cellar/boost/1.84.0_1/include")
+set(Boost_LIBRARY_DIR "/opt/homebrew/Cellar/boost/1.84.0_1/lib")
+find_package(Boost 1.66.0 REQUIRED COMPONENTS system thread PATHS ${BOOST_ROOT} NO_DEFAULT_PATH)
+
+find_package(OpenSSL REQUIRED)
+
+# link main with sqlite3
+find_package(SQLite3 REQUIRED)
+target_link_libraries(main SQLite::SQLite3)
 
 # Include project directories
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# Include the directories for the Inja library
+# Include external libraries
 include_directories(${PROJECT_SOURCE_DIR}/extern)
+include_directories(${PROJECT_SOURCE_DIR}/extern/crow)
