@@ -1,6 +1,5 @@
-//
+// Index.h
 // Created by Yu Houcheng on 4/7/24.
-//
 
 #ifndef CPP_SERVER_INDEX_H
 #define CPP_SERVER_INDEX_H
@@ -14,7 +13,9 @@
 
 // Declare a function to set up the home page route
 namespace crow_app {
-    void setupIndexRoute(crow::SimpleApp& app, inja::Environment &env);
+
+void setupIndexRoute(crow::SimpleApp &app, inja::Environment &env);
+
 }
 
 #endif //CPP_SERVER_INDEX_H
