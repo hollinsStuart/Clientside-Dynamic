@@ -1,6 +1,8 @@
 // globals.cpp
 // Created by Yu Houcheng on 4/9/24.
 
+// Defines all the global variables in the project.
+
 #include "globals.h"
 
 const std::string PROJECT_ROOT_FOLDER = "/Users/hollins/ClientDynamic/";

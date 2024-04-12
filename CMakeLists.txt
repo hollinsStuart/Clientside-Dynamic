@@ -5,15 +5,17 @@ set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB ROUTES "src/routes/*.cpp")
 
-add_executable(main src/main.cpp ${ROUTES})
+add_executable(main src/main.cpp ${ROUTES}
+        include/Users.h
+        src/routes/Users.cpp)
 
 # Check if the compiler is GCC or Clang
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(-Wall -Wconversion -Werror -O3)
-elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     # Equivalent options for MSVC
     add_compile_options(/W4 /O2)
-endif()
+endif ()
 
 include_directories(${BOOST_PATH})
 set(BOOST_ROOT "/opt/homebrew/Cellar/boost/1.84.0_1")

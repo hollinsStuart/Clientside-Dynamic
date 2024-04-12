@@ -10,28 +10,28 @@
 #include <string>
 
 class URLMap {
-public:
-    static URLMap& instance() {
-        static URLMap instance;
-        return instance;
-    }
+ public:
+  static URLMap &instance() {
+    static URLMap instance;
+    return instance;
+  }
 
-    void add_route(const std::string& name, const std::string& path) {
-        routes[name] = path;
-    }
+  void add_route(const std::string &name, const std::string &path) {
+    routes[name] = path;
+  }
 
-    std::string get_url(const std::string& name) const {
-        auto it = routes.find(name);
-        if (it != routes.end()) {
-            return it->second;
-        }
-        return ""; // Return empty string or handle error as appropriate
+  [[nodiscard]]
+  std::string get_url(const std::string &name) const {
+    auto it = routes.find(name);
+    if (it != routes.end()) {
+      return it->second;
     }
+    return ""; // Return empty string or handle error as appropriate
+  }
 
-private:
-    std::unordered_map<std::string, std::string> routes;
-    URLMap() {} // Private constructor for singleton
+ private:
+  std::unordered_map<std::string, std::string> routes;
+  URLMap() {} // Private constructor for singleton
 };
-
 
 #endif //CPP_SERVER_URLMAP_H

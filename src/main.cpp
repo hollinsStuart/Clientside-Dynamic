@@ -3,6 +3,7 @@
 
 #include "Index.h"
 #include "Hello.h"
+#include "Users.h"
 
 #include <iostream>
 using std::cout, std::endl, std::cerr;
@@ -23,7 +24,6 @@ int main() {
 
   sqlite3 *db;
   std::filesystem::path dbPath(DATABASE_PATH);
-  // Open database
   cout << "Opening database: " << dbPath << endl;
   if (sqlite3_open(dbPath.c_str(), &db)) {
     std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
@@ -32,8 +32,9 @@ int main() {
     std::cout << "Opened database successfully" << std::endl;
   }
 
-  crow_app::setupIndexRoute(app, env);
+  crow_app::setupIndexRoute(app, env, db);
   crow_app::setupHelloRoute(app, env);
+  crow_app::setupUserProfileRoute(app, env, db);
 
   app.port(8000).multithreaded().run();
 

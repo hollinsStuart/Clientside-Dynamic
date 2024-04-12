@@ -11,10 +11,12 @@
 #include "nlohmann/json.hpp"
 #include "URLMap.h"
 
+#include <sqlite3.h>
+
 // Declare a function to set up the home page route
 namespace crow_app {
 
-void setupIndexRoute(crow::SimpleApp &app, inja::Environment &env);
+void setupIndexRoute(crow::SimpleApp &app, inja::Environment &env, sqlite3 *db);
 
 }
 

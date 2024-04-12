@@ -6,8 +6,15 @@
     <title>{{ title }}</title>
 </head>
 <body>
-    <h1>{{ heading }}</h1>
-    <p>{{ message }}</p>
+<h1>{{ heading }}</h1>
+<p>{{ message }}</p>
+<h2>Users List</h2>
+{% for user in usernames %}
+<div>
+    <h3>{{ user.fullname }}: {{ user.username }}</h3>
+    <a href="/users/{{ user.username }}/">Profile</a>
+</div>
+{% endfor %}
 </body>
 </html>
 
