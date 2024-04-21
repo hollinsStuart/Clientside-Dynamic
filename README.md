@@ -1,11 +1,22 @@
 # Cpp Server
 
-A web server written in `C++`.
+A web server written in `C++`. Using crow app.
 
-# Compilation
+## Dependencies
+
+crow
+
+## Compilation
 
 Use command `cmake .` to build the project.
 
-# Run
+For scss files, run the following in main directory.
+
+```shell
+sass ./web/scss/style.scss web/templates/css/style.css
+```
+
+## Run
 
 `./main`
+

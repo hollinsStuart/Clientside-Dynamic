@@ -1,0 +1,97 @@
+.container {
+  width: 400px;
+  height: 400px;
+  margin: 0 50px 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.item:nth-child(1) {
+  background: hsl(calc(0 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(1):hover) {
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.item:nth-child(2) {
+  background: hsl(calc(1 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(2):hover) {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.item:nth-child(3) {
+  background: hsl(calc(2 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(3):hover) {
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.item:nth-child(4) {
+  background: hsl(calc(3 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(4):hover) {
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+.item:nth-child(5) {
+  background: hsl(calc(4 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(5):hover) {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+.item:nth-child(6) {
+  background: hsl(calc(5 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(6):hover) {
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+.item:nth-child(7) {
+  background: hsl(calc(6 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(7):hover) {
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+
+.item:nth-child(8) {
+  background: hsl(calc(7 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(8):hover) {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+
+.item:nth-child(9) {
+  background: hsl(calc(8 * 20 * 1deg), 100%, 74%);
+}
+
+.container:has(.item:nth-child(9):hover) {
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+
+.item {
+  background: #1a2124;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,44 @@
+@use "sass:math";
+
+.container {
+  width: 400px;
+  height: 400px;
+  margin: 0 50px 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.user-profile {
+  display: flex; /* Establishes a flex container */
+  flex-direction: column; /* Stacks the children vertically */
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  height: 200px; /* Arbitrary height; adjust as needed */
+  text-align: center; /* Ensures text inside children is also centered */
+  margin: 20px; /* Adds some space around each user profile */
+}
+
+@for $i from 0 through 8 {
+  .item:nth-child(#{$i + 1}) {
+    background: hsl(calc(#{$i} * 20 * 1deg), 100%, 74%);
+  }
+  .container:has(.item:nth-child(#{$i + 1}):hover) {
+    $r: floor(math.div($i, 3) + 1);
+    $c: $i % 3 + 1;
+    $arr: 1fr 1fr 1fr;
+    $rows: set-nth($arr, $r, 2fr);
+    $cols: set-nth($arr, $c, 2fr);
+    grid-template-columns: $cols;
+    grid-template-rows: $rows;
+  }
+}
+
+.item {
+  background: #1a2124;
+
+}
+
+

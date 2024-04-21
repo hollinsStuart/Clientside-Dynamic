@@ -4,13 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <!-- Link to the external CSS file -->
+    <!--    <link rel="stylesheet" href="web/css/style.css">-->
+    <style>
+        html, body {
+            display: grid; /* Establishes a grid container */
+            place-items: center; /* Shortcut to center items both horizontally and vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Removes default margin */
+        }
+
+        .user-profile {
+            display: flex; /* Establishes a flex container */
+            flex-direction: column; /* Stacks the children vertically */
+            align-items: center; /* Centers children horizontally */
+            justify-content: center; /* Centers children vertically */
+            height: 50px; /* Arbitrary height; adjust as needed */
+            text-align: center; /* Ensures text inside children is also centered */
+            margin: 20px; /* Adds some space around each user profile */
+        }
+
+        .container {
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .item:nth-child(1) {
+            background: hsl(calc(0 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(1):hover) {
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 2fr 1fr 1fr;
+        }
+
+        .item:nth-child(2) {
+            background: hsl(calc(1 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(2):hover) {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 2fr 1fr 1fr;
+        }
+
+        .item:nth-child(3) {
+            background: hsl(calc(2 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(3):hover) {
+            grid-template-columns: 1fr 1fr 2fr;
+            grid-template-rows: 2fr 1fr 1fr;
+        }
+
+        .item:nth-child(4) {
+            background: hsl(calc(3 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(4):hover) {
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+        }
+
+        .item:nth-child(5) {
+            background: hsl(calc(4 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(5):hover) {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+        }
+
+        .item:nth-child(6) {
+            background: hsl(calc(5 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(6):hover) {
+            grid-template-columns: 1fr 1fr 2fr;
+            grid-template-rows: 1fr 2fr 1fr;
+        }
+
+        .item:nth-child(7) {
+            background: hsl(calc(6 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(7):hover) {
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 2fr;
+        }
+
+        .item:nth-child(8) {
+            background: hsl(calc(7 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(8):hover) {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr 2fr;
+        }
+
+        .item:nth-child(9) {
+            background: hsl(calc(8 * 20 * 1deg), 100%, 74%);
+        }
+
+        .container:has(.item:nth-child(9):hover) {
+            grid-template-columns: 1fr 1fr 2fr;
+            grid-template-rows: 1fr 1fr 2fr;
+        }
+
+        .item {
+            background: #1a2124;
+        }
+
+        /*# sourceMappingURL=style.css.map */
+
+    </style>
 </head>
+<div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
 <body>
 <h1>{{ heading }}</h1>
 <p>{{ message }}</p>
 <h2>Users List</h2>
 {% for user in usernames %}
-<div>
+<div class="user-profile">
     <h3>{{ user.fullname }}: {{ user.username }}</h3>
     <a href="/users/{{ user.username }}/">Profile</a>
 </div>

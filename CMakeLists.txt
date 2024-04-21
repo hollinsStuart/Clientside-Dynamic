@@ -1,13 +1,17 @@
 cmake_minimum_required(VERSION 3.27)
-project(Cpp_Server)
+
+project(Cpp_Server
+        VERSION 0.0.1
+        #        PROJECT_DESCRIPTION "A simple C++ server"
+        #        PROJECT_HOMEPAGE_URL "https://github.com/hollinsStuart/Clientside-Dynamic"
+        LANGUAGES CXX
+)
 
 set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB ROUTES "src/routes/*.cpp")
 
-add_executable(main src/main.cpp ${ROUTES}
-        include/Users.h
-        src/routes/Users.cpp)
+add_executable(main src/main.cpp ${ROUTES})
 
 # Check if the compiler is GCC or Clang
 if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

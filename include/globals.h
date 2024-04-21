@@ -11,5 +11,6 @@
 extern const std::string PROJECT_ROOT_FOLDER;
 extern const std::string TEMPLATES_FOLDER;
 extern const std::string DATABASE_PATH;
+extern const std::string STYLE_SHEET_PATH;
 
 #endif //CPP_SERVER_GLOBALS_H

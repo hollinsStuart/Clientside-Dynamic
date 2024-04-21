@@ -16,9 +16,12 @@ using std::string;
 #include "crow/crow.h"
 #include "inja/inja.hpp"
 
+#include "arguments.h"
 #include "globals.h"
 
-int main() {
+int main(int argc, char *argv[]) {
+  Options options;
+  getMode(argc, argv, options);
   crow::SimpleApp app;
   inja::Environment env;
 
@@ -35,8 +38,12 @@ int main() {
   crow_app::setupIndexRoute(app, env, db);
   crow_app::setupHelloRoute(app, env);
   crow_app::setupUserProfileRoute(app, env, db);
-
-  app.port(8000).multithreaded().run();
+  try {
+    app.port(options.port).multithreaded().run();
+  } catch (const std::system_error &e) {
+    cerr << e.what() << endl;
+    exit(1);
+  }
 
   sqlite3_close(db);
   cout << "Closed server and database." << endl;

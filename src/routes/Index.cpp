@@ -39,6 +39,7 @@ void setupIndexRoute(crow::SimpleApp &app, inja::Environment &env, sqlite3 *db) 
           usernames.push_back(userObject);
         }
         data["usernames"] = usernames;
+        data["style_path"] = STYLE_SHEET_PATH;
 
         // Render the template with the data
         std::string result = env.render_file(TEMPLATES_FOLDER + "index.html", data);
